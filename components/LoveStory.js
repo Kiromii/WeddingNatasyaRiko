@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Sparkles, HeartHandshake, Gem, Church } from 'lucide-react';
+import { Sparkles, HeartHandshake, Gem, House } from 'lucide-react';
 import Reveal from './Reveal';
 import SectionDivider from './SectionDivider';
 import { weddingData } from '@/lib/data';
@@ -11,7 +11,7 @@ const ICONS = {
   sparkles: Sparkles,
   heart: HeartHandshake,
   gem: Gem,
-  church: Church,
+  church: House,
 };
 
 // Posisi horizontal "jalan setapak" dalam persen lebar container

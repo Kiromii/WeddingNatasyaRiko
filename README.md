@@ -1,4 +1,4 @@
-# Undangan Pernikahan Digital — Fernanda & Gustian (template)
+# Undangan Pernikahan Digital — Natasya & Riko
 
 Website undangan digital satu halaman dengan tema biru & putih, dibuat dengan
 Next.js 14 (App Router), Tailwind CSS, dan Framer Motion. Tampilan dibuka

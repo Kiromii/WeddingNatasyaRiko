@@ -47,10 +47,10 @@ export default function Intro() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.3}>
+        {/* <Reveal delay={0.3}>
           <SectionDivider tone="dark" />
           <p className="font-body text-sm text-sky-light">{weddingData.hashtag}</p>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );

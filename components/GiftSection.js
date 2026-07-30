@@ -95,28 +95,6 @@ export default function GiftSection() {
           <BankCard key={b.number} {...b} />
         ))}
       </Reveal>
-
-      {weddingData.gift.qrisUrl && (
-        <Reveal delay={0.25} className="mt-7">
-          <button onClick={() => setShowQris((v) => !v)} className="inline-flex items-center gap-2 rounded-full border border-sky/40 px-5 py-2.5 font-body text-xs uppercase tracking-[0.15em] text-sky transition-colors hover:bg-sky/10">
-            <QrCode size={14} />
-            {showQris ? 'Sembunyikan QRIS' : 'Lihat QRIS'}
-            <motion.span animate={{ rotate: showQris ? 180 : 0 }} transition={{ duration: 0.3 }}>
-              <ChevronDown size={14} />
-            </motion.span>
-          </button>
-
-          <AnimatePresence initial={false}>
-            {showQris && (
-              <motion.div key="qris-panel" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.4, ease: 'easeInOut' }} style={{ overflow: 'hidden' }}>
-                <div className="pt-7">
-                  <QrisCard value={weddingData.gift.qrisUrl} />
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </Reveal>
-      )}
     </section>
   );
 }

@@ -34,8 +34,7 @@ export default function Intro() {
           </p>
         </Reveal>
 
-        <p className="mt-8 font-body text-[11px] uppercase tracking-[0.2em] text-sky-light">Putri bungsu &amp; Putra bungsu</p>
-        <div className="mx-auto mt-10 grid max-w-md grid-cols-1 gap-10 sm:grid-cols-2">
+        <div className="mx-auto mt-8 grid max-w-md grid-cols-1 gap-10 sm:grid-cols-2">
           <Reveal delay={0.1}>
             <PortraitFrame src={weddingData.bride.photo} label="Foto mempelai wanita" tilt="-rotate-3" />
             <p className="mt-5 font-body text-[11px] uppercase tracking-[0.2em] text-sky-light">Putri bungsu</p>

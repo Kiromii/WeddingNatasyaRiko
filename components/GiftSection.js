@@ -85,7 +85,7 @@ export default function GiftSection() {
       <Reveal>
         <Gift className="mx-auto h-6 w-6 text-sky" strokeWidth={1.5} />
         <p className="mt-3 font-body text-[11px] uppercase tracking-[0.35em] text-sky/80">Wedding Gift</p>
-        <h2 className="mt-2 font-display text-3xl italic text-pearl">Tanda Kasih</h2>
+        <h2 className="mt-2 font-display text-3xl italic text-pearl">Wedding Gift</h2>
         <SectionDivider tone="dark" />
         <p className="mx-auto mt-2 max-w-xs font-body text-sm leading-relaxed text-sky-light">{weddingData.gift.note}</p>
       </Reveal>

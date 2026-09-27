@@ -25,14 +25,16 @@ function EventCard({ data }) {
         <p className="mt-4 font-display text-base text-pearl">{data.place}</p>
         <p className="mt-1 font-body text-xs text-sky-light/90">{data.address}</p>
 
-        <a
-          href={data.mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center gap-2 rounded-full border border-pearl/40 bg-pearl/10 px-5 py-2 font-body text-xs uppercase tracking-[0.15em] text-pearl transition-colors hover:bg-pearl/20"
-        >
-          <MapPin size={14} /> Lihat Lokasi
-        </a>
+        {data.mapsUrl && (
+          <a
+            href={data.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-pearl/40 bg-pearl/10 px-5 py-2 font-body text-xs uppercase tracking-[0.15em] text-pearl transition-colors hover:bg-pearl/20"
+          >
+            <MapPin size={14} /> Lihat Lokasi
+          </a>
+        )}
       </div>
     </div>
   );
@@ -59,6 +61,9 @@ export default function EventDetails() {
           </Reveal>
           <Reveal delay={0.2}>
             <EventCard data={weddingData.resepsi} />
+          </Reveal>
+          <Reveal delay={0.3}>
+            <EventCard data={weddingData.unduhMantu} />
           </Reveal>
         </div>
       </div>

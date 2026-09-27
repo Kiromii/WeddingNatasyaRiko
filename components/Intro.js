@@ -34,15 +34,18 @@ export default function Intro() {
           </p>
         </Reveal>
 
+        <p className="mt-8 font-body text-[11px] uppercase tracking-[0.2em] text-sky-light">Putri bungsu &amp; Putra bungsu</p>
         <div className="mx-auto mt-10 grid max-w-md grid-cols-1 gap-10 sm:grid-cols-2">
           <Reveal delay={0.1}>
             <PortraitFrame src={weddingData.bride.photo} label="Foto mempelai wanita" tilt="-rotate-3" />
-            <h3 className="mt-5 font-script text-4xl text-pearl [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">{weddingData.bride.fullName}</h3>
+            <p className="mt-5 font-body text-[11px] uppercase tracking-[0.2em] text-sky-light">Putri bungsu</p>
+            <h3 className="mt-2 font-script text-4xl text-pearl [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">{weddingData.bride.fullName}</h3>
             <p className="mx-auto mt-2 max-w-[220px] rounded-lg bg-ink-900/45 px-3 py-2 font-body text-xs leading-relaxed text-sky-light backdrop-blur-sm">{weddingData.bride.parents}</p>
           </Reveal>
           <Reveal delay={0.2}>
             <PortraitFrame src={weddingData.groom.photo} label="Foto mempelai pria" tilt="rotate-3" />
-            <h3 className="mt-5 font-script text-4xl text-pearl [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">{weddingData.groom.fullName}</h3>
+            <p className="mt-5 font-body text-[11px] uppercase tracking-[0.2em] text-sky-light">Putra bungsu</p>
+            <h3 className="mt-2 font-script text-4xl text-pearl [text-shadow:0_2px_10px_rgba(0,0,0,0.5)]">{weddingData.groom.fullName}</h3>
             <p className="mx-auto mt-2 max-w-[220px] rounded-lg bg-ink-900/45 px-3 py-2 font-body text-xs leading-relaxed text-sky-light backdrop-blur-sm">{weddingData.groom.parents}</p>
           </Reveal>
         </div>

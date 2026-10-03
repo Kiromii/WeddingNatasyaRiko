@@ -12,11 +12,9 @@ const MAX_COUNT = 12;
 
 export default function Gallery() {
   const [active, setActive] = useState(null);
-  const [selected, setSelected] = useState([]);
   const photos = weddingData.gallery.slice(0, MAX_COUNT);
 
-  const selectPhoto = (photo, index) => {
-    setSelected((current) => (current.includes(index) ? current.filter((item) => item !== index) : [...current, index]));
+  const selectPhoto = (photo) => {
     setActive(photo);
   };
 
@@ -31,19 +29,17 @@ export default function Gallery() {
       <Reveal delay={0.1} className="mx-auto mt-8 max-w-2xl">
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
           {photos.map((photo, index) => {
-            const isSelected = selected.includes(index);
-
             return (
               <motion.button
                 key={photo.src}
                 type="button"
                 whileHover={{ y: -4, scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => selectPhoto(photo, index)}
+                onClick={() => selectPhoto(photo)}
                 aria-label={`Buka foto ${index + 1}`}
                 className={`relative aspect-square overflow-hidden rounded-xl shadow-lg ${index % 5 === 0 ? 'sm:row-span-2 sm:aspect-[3/4]' : ''}`}
               >
-                <div className={`h-full w-full transition-[filter] duration-500 ${isSelected ? '' : 'grayscale'}`}>
+                <div className="h-full w-full">
                   <PhotoFrame src={photo.src} alt={photo.caption || `Momen pernikahan ${index + 1}`} className="h-full w-full" label={photo.caption} />
                 </div>
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/35 via-transparent to-transparent" />

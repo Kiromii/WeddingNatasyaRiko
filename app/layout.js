@@ -25,16 +25,25 @@ const jost = Jost({
 
 const title = 'Natasya & Riko — Undangan Pernikahan';
 const description = 'Dengan penuh suka cita, kami mengundang Anda di hari pernikahan kami.';
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
-  : process.env.VERCEL_URL
-    ? new URL(`https://${process.env.VERCEL_URL}`)
-    : new URL('http://localhost:3000');
+const configuredSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+  process.env.VERCEL_URL;
+const siteUrl = new URL(
+  configuredSiteUrl
+    ? configuredSiteUrl.startsWith('http')
+      ? configuredSiteUrl
+      : `https://${configuredSiteUrl}`
+    : 'http://localhost:3000'
+);
 
 export const metadata = {
   metadataBase: siteUrl,
   title,
   description,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title,
     description,
@@ -48,6 +57,7 @@ export const metadata = {
         width: 1334,
         height: 2000,
         alt: 'Natasya dan Riko',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -55,7 +65,12 @@ export const metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/images/hero.JPEG'],
+    images: [
+      {
+        url: '/images/hero.JPEG',
+        alt: 'Natasya dan Riko',
+      },
+    ],
   },
 };
 

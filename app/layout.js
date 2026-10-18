@@ -23,9 +23,40 @@ const jost = Jost({
   display: 'swap',
 });
 
+const title = 'Natasya & Riko — Undangan Pernikahan';
+const description = 'Dengan penuh suka cita, kami mengundang Anda di hari pernikahan kami.';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+  : process.env.VERCEL_URL
+    ? new URL(`https://${process.env.VERCEL_URL}`)
+    : new URL('http://localhost:3000');
+
 export const metadata = {
-  title: 'Natasya & Riko — Undangan Pernikahan',
-  description: 'Dengan penuh suka cita, kami mengundang Anda di hari pernikahan kami.',
+  metadataBase: siteUrl,
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: '/',
+    siteName: 'Natasya & Riko',
+    locale: 'id_ID',
+    type: 'website',
+    images: [
+      {
+        url: '/images/hero.JPEG',
+        width: 1334,
+        height: 2000,
+        alt: 'Natasya dan Riko',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: ['/images/hero.JPEG'],
+  },
 };
 
 export const viewport = {

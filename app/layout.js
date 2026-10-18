@@ -42,12 +42,12 @@ export const metadata = {
   title,
   description,
   alternates: {
-    canonical: '/',
+    canonical: 'https://wedding-natasya-riko.vercel.app',
   },
   openGraph: {
     title,
     description,
-    url: '/',
+    url: 'https://wedding-natasya-riko.vercel.app',
     siteName: 'Natasya & Riko',
     locale: 'id_ID',
     type: 'website',
